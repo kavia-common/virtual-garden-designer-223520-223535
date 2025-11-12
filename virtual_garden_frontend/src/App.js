@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer';
 import DesignerPage from './pages/DesignerPage';
 import GalleryPage from './pages/GalleryPage';
 import HelpPage from './pages/HelpPage';
+import { GardenProvider } from './features/garden/gardenContext';
 
 /**
  * PUBLIC_INTERFACE
@@ -68,7 +69,9 @@ function App() {
         experimental={experimentalEnabled}
       />
       <main id="main-content" role="main" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-        {mainContent}
+        <GardenProvider>
+          {mainContent}
+        </GardenProvider>
       </main>
       <Footer />
     </div>
